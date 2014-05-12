@@ -24,6 +24,10 @@
     // create factory and generate tiles
     BTJFactory *factory = [[BTJFactory alloc] init];
     
+    // get a boss!
+    self.boss = [ factory boss];
+    
+    
     // create character
     self.character = [factory character];
     NSLog(@"character health: %i", self.character.health);
@@ -52,6 +56,14 @@
     //
     NSString *s = [NSString stringWithFormat:@"start %i %i", self.currentRow, self.currentCol];
     self.infoLabel.text = s;
+    
+    //update the character stuff
+    self.healthValue.text = [NSString stringWithFormat:@"%i", self.character.health];
+    self.armorName.text = self.character.armor.name;
+    self.weaponeName.text = self.character.weapon.name;
+    self.damageValue.text = [NSString stringWithFormat:@"%i", self.character.damage];
+    [self updateCharacterStatsForArmor:nil withWeapons:nil withHealthEffects:0];
+
     [self updateTile];
 
     // initialise character
@@ -81,8 +93,8 @@
     NSLog(@"tile armor name: %@", tileModel.armor.name);
     NSLog(@"tile weapon name: %@", tileModel.weapon.name);
     NSLog(@"tile armor damage: %i", tileModel.weapon.damage);
-    self.character.health = self.character.health + tileModel.armor.health;
-    self.character.damage = self.character.damage + tileModel.weapon.damage;
+    //self.character.health = self.character.health + tileModel.armor.health;
+    //self.character.damage = self.character.damage + tileModel.weapon.damage;
     
     self.storyText.text = tileModel.story;
     self.backgroundImage.image = tileModel.background;
@@ -94,8 +106,10 @@
 {
     if (armor != nil) {
         self.character.health = self.character.health - self.character.armor.health + armor.health;
+        self.character.armor.name = armor.name;
     } else if (weapon != nil) {
         self.character.damage = self.character.damage - self.character.weapon.damage + weapon.damage;
+        self.character.weapon.name = weapon.name;
     } else if (healthEffect != 0) {
         self.character.health = self.character.health + healthEffect;
     } else {
@@ -203,11 +217,33 @@
 }
 
 - (IBAction)actionButtonPressed:(UIButton *)sender {
-//    UIAlertView *aV = [[UIAlertView alloc] initWithTitle:@"Alert!" message:@"You pressed the action button!" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
-//    [aV show];
-    NSString *s = [NSString stringWithFormat:@"action: %i %i", self.currentRow, self.currentCol];
-    self.infoLabel.text = s;
+    if ( self.currentRow == 3 && self.currentCol == 2) {
+        NSLog(@"ci siamo: siamo al BOSS!");
+    }
     
+    NSString *s = [NSString stringWithFormat:@"action: %i %i", self.currentRow, self.currentCol];
+
+    // 1: what's the current tile:
+    BTJTile *tile = [[self.arrayOfTiles objectAtIndex:self.currentRow] objectAtIndex:self.currentCol];
+
+    NSLog(@"inside actionButtonPressed %@ %@ ",tile.armor, tile.weapon );
+
+    
+    // are we fighting the boss?
+    if (tile.healthEffect == -15 )
+    {
+        NSLog(@"fighting the BOSS!");
+        self.boss.health = self.boss.health - self.character.damage;
+    }
+        
+
+    
+    [self updateCharacterStatsForArmor:tile.armor withWeapons:tile.weapon withHealthEffects:tile.healthEffect];
+    
+    [self updateTile];
+    
+
+    self.infoLabel.text = s;
     
     _actionButton.highlighted = YES;
 }

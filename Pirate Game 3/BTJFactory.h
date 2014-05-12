@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "BTJCharacter.h"
+#import "BTJBoss.h"
 
 @interface BTJFactory : NSObject
 
 -(NSArray *) tiles;
 -(BTJCharacter *) character;
+-(BTJBoss *) boss;
 
 @end

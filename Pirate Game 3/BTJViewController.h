@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "BTJCharacter.h"
+#import "BTJBoss.h"
 
 @interface BTJViewController : UIViewController
 
 // instance variables
 
+@property (strong,nonatomic) BTJBoss *boss;
 
 @property (strong,nonatomic) BTJCharacter *character;
 

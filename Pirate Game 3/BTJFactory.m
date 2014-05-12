@@ -183,4 +183,11 @@ int const COLUMNS=4;
     return character;
 }
 
+-(BTJBoss *) boss
+{
+    BTJBoss *boss = [[BTJBoss alloc] init];
+    boss.health = 65;
+    return boss;
+}
+
 @end

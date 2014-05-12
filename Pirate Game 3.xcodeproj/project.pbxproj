@@ -10,6 +10,7 @@
 		B514EDD4190C662900DF50E3 /* BTJWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = B514EDD3190C662900DF50E3 /* BTJWeapon.m */; };
 		B514EDD7190C668B00DF50E3 /* BTJArmor.m in Sources */ = {isa = PBXBuildFile; fileRef = B514EDD6190C668B00DF50E3 /* BTJArmor.m */; };
 		B514EDDA190C6A7300DF50E3 /* BTJCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = B514EDD9190C6A7300DF50E3 /* BTJCharacter.m */; };
+		B52921D91921734D0008991D /* BTJBoss.m in Sources */ = {isa = PBXBuildFile; fileRef = B52921D81921734D0008991D /* BTJBoss.m */; };
 		B59A92571905C55500E1AA80 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A92561905C55500E1AA80 /* Foundation.framework */; };
 		B59A92591905C55500E1AA80 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A92581905C55500E1AA80 /* CoreGraphics.framework */; };
 		B59A925B1905C55500E1AA80 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59A925A1905C55500E1AA80 /* UIKit.framework */; };
@@ -58,6 +59,8 @@
 		B514EDD6190C668B00DF50E3 /* BTJArmor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTJArmor.m; sourceTree = "<group>"; };
 		B514EDD8190C6A7300DF50E3 /* BTJCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTJCharacter.h; sourceTree = "<group>"; };
 		B514EDD9190C6A7300DF50E3 /* BTJCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTJCharacter.m; sourceTree = "<group>"; };
+		B52921D71921734D0008991D /* BTJBoss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTJBoss.h; sourceTree = "<group>"; };
+		B52921D81921734D0008991D /* BTJBoss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTJBoss.m; sourceTree = "<group>"; };
 		B59A92531905C55500E1AA80 /* Pirate Game 3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pirate Game 3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59A92561905C55500E1AA80 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B59A92581905C55500E1AA80 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -126,6 +129,8 @@
 				B514EDD1190A2F6400DF50E3 /* Factory */,
 				B59A928D19063F3000E1AA80 /* BTJTile.h */,
 				B59A928E19063F3000E1AA80 /* BTJTile.m */,
+				B52921D71921734D0008991D /* BTJBoss.h */,
+				B52921D81921734D0008991D /* BTJBoss.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -350,6 +355,7 @@
 				B514EDD4190C662900DF50E3 /* BTJWeapon.m in Sources */,
 				B59A92921906403500E1AA80 /* BTJFactory.m in Sources */,
 				B514EDDA190C6A7300DF50E3 /* BTJCharacter.m in Sources */,
+				B52921D91921734D0008991D /* BTJBoss.m in Sources */,
 				B514EDD7190C668B00DF50E3 /* BTJArmor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
